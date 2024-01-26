@@ -1,0 +1,115 @@
+body {
+    background-color: #0C356A;
+    background-size: cover; 
+    font-family: 'Inter', sans-serif;
+    margin-top: 100px;
+    padding: 0;
+
+}
+
+.user-form {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    margin: 50px auto;
+    color: #ebecf0;
+    background-color: #E8E8E8;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-top: 70px;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    color: #0C356A;
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    color: #0C356A;
+}
+
+input[type="text"] {
+font-size:16px;
+font-family: 'Inter', sans-serif;
+color:#0C356A;
+background-color: #d3d3d3;
+border-color: #d3d3d3;
+border-radius: 10px;
+outline: none;
+}
+
+input[type="email"] {
+    font-size:16px;
+    font-family: 'Inter', sans-serif;
+    color:#0C356A;
+    height: 40px;
+    background-color: #d3d3d3;
+    border-color: #d3d3d3;
+    border-radius: 10px;
+    outline: none;
+    }
+
+input[type="password"] {
+        font-size:16px;
+        font-family: 'Inter', sans-serif;
+        color:#0C356A;
+        height: 40px;
+        background-color: #d3d3d3;
+        border-color: #d3d3d3;
+        border-radius: 10px;
+        outline: none;
+        }   
+
+button#create {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2px;
+    color: #E8E8E8;
+    border: 2px solid #0C356A; 
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background-color: #0C356A;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+button#create:hover {
+    background-color: transparent;
+    color: #0C356A;
+    border: 2px solid #0C356A;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0C356A;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+
+img {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
