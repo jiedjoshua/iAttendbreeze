@@ -33,7 +33,7 @@
             <button id="login" type="submit">Login</button>
         </form>
 
-        <a href="{{ route('register') }}">
+        <a href="{{ route('role.index') }}">
             <button id="register" type="button">Register</button>
         </a>
     </div>
