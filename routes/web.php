@@ -32,6 +32,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/role',[RoleController::class, 'index'])->name('role.index');
 
+Route::get('/idverification-parent',[IDverificationController::class, 'showParent'])->name('showParent');
+Route::get('/idverification-teacher',[IDverificationController::class, 'showTeacher'])->name('showTeacher');
+
+Route::post('/idverification-parent',[IDverificationController::class, 'checkStudent'])->name('checkStudent');
+Route::post('/idverification-teacher',[IDverificationController::class, 'checkTeacher'])->name('checkTeacher');
 
 require __DIR__.'/auth.php';

@@ -18,17 +18,17 @@
 		<br>
 
         <!-- For the user -->
-        <form action="{{ route('verifyteacherID') }}" method="POST">
+        <form action="{{ route('checkTeacher') }}" method="POST">
             @csrf
 		<align; center>
             <label for="first_name">First Name</label>
-            <input type="text" id="first_name" name="first_name" placeholder="Enter first name" required>
+            <input type="text" id="first_name" name="firstname" placeholder="Enter first name" required>
 
             <label for="last_name">Last Name</label>
-            <input type="text" id="last_name" name="last_name" placeholder="Enter last name" required>
+            <input type="text" id="last_name" name="lastname" placeholder="Enter last name" required>
 
             <label for="idnumber">ID Number</label>
-            <input type="text" id="idnumber" name="id" placeholder="Enter ID number" required>
+            <input type="text" id="idnumber" name="teacher_id" placeholder="Enter ID number" required>
 			
             <input type="submit" value="Next ≫" name="submit" id="submit">
         </form>
