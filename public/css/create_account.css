@@ -68,7 +68,7 @@ input[type="password"] {
         outline: none;
         }   
 
-button#create {
+button#submit {
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
@@ -87,7 +87,7 @@ button#create {
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-button#create:hover {
+button#submit:hover {
     background-color: transparent;
     color: #0C356A;
     border: 2px solid #0C356A;

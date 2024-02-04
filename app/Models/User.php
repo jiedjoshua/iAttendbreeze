@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
+
+
 
 class User extends Authenticatable
 {
@@ -46,4 +49,26 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function getDashboardUrl()
+    {
+        switch ($this->role) {
+            case 'admin':
+                return '/admin/dashboard';
+            case 'teacher':
+                return '/teacher/dashboard';
+            case 'parent':
+                return '/parent/dashboard';
+        }
+    }
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'student_id');
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class, 'teacher_id');
+    }
 }

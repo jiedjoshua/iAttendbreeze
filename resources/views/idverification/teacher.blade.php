@@ -15,12 +15,23 @@
     <div class="user-form">
 		<h1><b>Register</b></h1>
         <h2>Teacher's ID Verification</h2>
-		<br>
+        @if(session('error'))
+              <div class="error-message" style="color: red; text-align: center; margin-bottom: 20px;">
+                 {{ session('error') }}
+              </div>
+        @endif
+
 
         <!-- For the user -->
         <form action="{{ route('checkTeacher') }}" method="POST">
             @csrf
-		<align; center>
+            
+                 @if(session('error'))
+
+                    <div class="alert alert-danger">
+                             {{ session('error') }}
+                    </div>
+                @endif
             <label for="first_name">First Name</label>
             <input type="text" id="first_name" name="firstname" placeholder="Enter first name" required>
 
