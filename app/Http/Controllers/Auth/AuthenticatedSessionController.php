@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Session;
+
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,7 +31,19 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $url = '';
+       // Session::put('id', $request->user()->id);
+
+        if($request->user()->role === 'admin'){
+            $url = '/admin/dashboard';
+        }elseif($request->user()->role === 'parent'){
+            $url = '/parent/dashboard';
+        }elseif($request->user()->role === 'teacher'){
+            $url = '/teacher/dashboard';
+        }
+
+
+        return redirect()->intended($url);
     }
 
     /**

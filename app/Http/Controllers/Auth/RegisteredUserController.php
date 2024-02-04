@@ -19,9 +19,14 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function viewParent(): View
     {
         return view('auth.register');
+    }
+
+    public function viewTeacher(): View
+    {
+        return view('auth.register-teacher');
     }
 
     /**
@@ -29,7 +34,7 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function storeParent(Request $request): RedirectResponse
+   public function storeParent(Request $request): RedirectResponse
     {
 
         $studentId = session('student_id');
@@ -44,12 +49,9 @@ class RegisteredUserController extends Controller
 
         ]);
 
-        
-
-      
-
+    
         $user = User::create([
-            'firstname' => $firstname,
+            'firstname'  => $firstname,
             'lastname' => $lastname,
             'student_id' => $studentId,
             'role' => $role,
@@ -66,14 +68,13 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/parent/dashboard');
     }
 
     public function storeTeacher(Request $request): RedirectResponse
     {
         $request->validate([
-           // 'firstname' => ['required', 'string', 'max:255'],
-           // 'lastname' => ['required', 'string', 'max:255'],
+        
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -101,6 +102,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/teacher/dashboard');
     }
 }

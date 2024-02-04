@@ -15,7 +15,14 @@
     <div class="user-form">
 		<h1><b>Register</b></h1>
         <h2>Parent's ID Verification</h2>
-		<br>
+		
+
+        @if(session('error'))
+              <div class="error-message" style="color: red; text-align: center; margin-bottom: 20px;">
+                 {{ session('error') }}
+              </div>
+        @endif
+
 
         <!-- For the user -->
         <form action="{{ route('checkStudent') }}" method="POST">

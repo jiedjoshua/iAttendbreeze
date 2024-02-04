@@ -19,6 +19,18 @@
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
+        @error('email')
+            <div class="error-message" style="color: red; margin-bottom:20px;">
+               <center> {{ $message }} </center>
+            </div>
+
+            <style>
+                #password{
+                    border-color: red;
+                }
+            </style>
+        @enderror
+
         <!-- Login Form -->
         <form action="{{ route('login') }}" method="POST">
             @csrf
